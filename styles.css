@@ -1,0 +1,298 @@
+/*#################### Defaults ############################*/
+nav, header, footer{/*take the nav, header and footer elements and display them as blocks*/
+    display: block;
+}
+
+body{
+    line-height: 1;/*space between the text of 1 pixel*/
+    margin: 0;/*when we select all the body, we want a margin of 0 so that the browser doesn't add its own margins*/
+}
+
+label {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+article p {
+    font-size: 35px;
+    padding: 20px;/*we didn't add a margin because it forces space and can mess up our columns, unlike padding which keeps the same space*/
+}
+
+.container {
+    width: 100%;
+    margin: auto; /* even distribution on the left and right side of our container (keeping everything in the center)*/
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.row {
+    width: 100%;
+    display: flex;/*allows us to add the below properties*/
+    flex-wrap: wrap;/*as everything is flexing (getting smaller), wrap the elements around it*/
+    align-items: center/*take the elements within the flex container and center them*/
+}
+
+.row::after {
+    display: table;
+    clear: both; /*remove floats*/
+    content: ""; /*start fresh*/
+}
+
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%; /*100% of the viewport*/}
+
+/*asterix selects all elements*/
+* {
+    box-sizing: border-box;/*include the pading and the margin into the size of our image and make it the actual size*/
+}
+
+/*#################### Nav bar ############################*/
+nav{
+    width: 100%;/*100% width of the screen view whether pc or mobile*/
+    margin: 0;/*to prevent extra space*/
+}
+
+nav ul{
+    background-color: #eee;
+    overflow: hidden;/*when the browser is collapsing an there is something to big to be shown, then don't show it*/
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav li{
+    list-style: none;/*doesn't add the bullet points eventhough anchor (a) usually removes them, but this is for guarantee*/
+    float: left;
+}
+
+ul.topnav li.topnav-right {
+    float: right;
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    min-height: 16px; /*instead of font size, as the browser shrink, the min height of the text will always be 16px*/
+    padding: 16px;
+    text-transform: uppercase;
+    color: #666;
+}
+/*adding an action (hover) and editing its properties*/
+ul.topnav li a:hover {
+    background-color: #0080ff;
+    color: #fff;
+}
+
+ul.topnav li.dropdownIcon {
+    display: none;/*to hide it from the desktop*/
+}
+
+/*#################### Custom Styles ############################*/
+
+#section-1-gradient {
+    background: #076Dff; /*for browsers that don't support gradient*/
+    background: -webkit-linear-gradient(#076Dff,#65a5ff); /*for safari and chrome*/
+    background: -o-linear-gradient(#076Dff,#65a5ff); /*for opera*/
+    background: -moz-linear-gradient(#076Dff,#65a5ff); /*for firefox*/
+    background: linear-gradient(#076Dff,#65a5ff); /*standard syntax*/
+}
+
+div.box{
+    text-align: center;
+    margin: 24px;
+    padding: 36px 24px 40px 24px;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px 0 rgba(0,0,0,.1);/*horizontal length(where to place the shadow horizontaly)    vertical length    blur radius    spread radius(thin line around the box if 1)   Red    Green   Blue    Alpha(transparency)*/
+}
+
+div.slopeIcon img {
+    display: block;
+    margin: auto;/*will center the image*/
+    box-shadow: -2px -2px 20px 2px rgba(0 /*shadow color*/, 0 /*background color*/,0 /*box color*/,.15/*opacity*/)
+    ,/*second shadow*/2px 2px 17px 2px rgba(0,0,0,1);
+}
+
+button {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #0069ff;
+    padding: 15px 60px;
+    display: block;
+    text-align: center;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+button.learnMore {
+    display: block;
+    margin: auto;
+}
+
+div.icon {/*won't work on the image, so either img.icon or div.icon image*/
+    width: 100%;
+}
+
+img.icon {
+    width: 100%;
+    max-width: 110px;
+}
+
+div.leftside-col {
+    margin-left: 30%;/*to make it flex for mobile phones*/
+}
+
+div.rightSide-col {
+     margin-left: 15%;
+}
+
+h1.large {
+    color: #fff;
+    font-size: 56px;
+    margin: 0;
+    line-height: 70px;/*use it to add spaces between lines instead of using margins*/
+}
+
+h1.section2Header {
+    font-size: 65px;
+    text-align: center;
+}
+
+/*every form tag that has h2 will confide to the following, we could've added a class to h2*/
+form h2{
+    color: #fff;
+}
+
+/*attribute selector*/
+input[type="text"] {
+    font-size: 20px;
+    width: 400px;/*fixed size to be used for desktops*/
+    min-width: 100px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+footer.footsy {
+    background-color: #666;
+    /*margin-left: 10%; is wrong because it will move the whole rectangle (row) by 10%*/
+    padding-left: 10%;
+}
+
+footer.footsy h1 {
+    color: #fff;
+    font-size: 35px;
+}
+
+footer.footsy ul{
+    list-style: none;/*removes bullet points*/
+    text-align: left;/*text won't move to the left because the bullet point made padding*/
+    padding-left: 0;
+}
+
+footer.footsy ul li {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.5;
+
+}
+
+/*#################### Mobile ############################*/
+/*to detect media screen (displat width)*/
+@media screen and (max-width: 680px) {
+    /*apply to every thing except child number 1 which is home*/
+    ul.topnav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+    ul.topnav li.dropdownIcon {
+        display:block; /*makes it a lot easier to position the element*/
+        float: right; /*because it inherited float left from the list and acnhor properties*/
+    }
+
+    ul.topnav.responsive li.dropdownIcon{
+        position: absolute; /*stay where you are*/
+        /*to make sure, make it in the top riht corner*/
+        top: 0;
+        right: 0;
+    }
+
+    ul.topnav.responsive {
+        position: relative;/*when we hit the button we don't want the unordered list to be placed in weird positions*/
+    }
+
+    ul.topnav.responsive li{
+        display: inline; /*lined up in a row*/
+        float: none; /*because it will inherit float left from ul.topnav li*/
+    }
+
+    ul.topnav.responsive li a {
+            display: block;
+            text-align: left;
+    }
+
+    h1.section2Header {
+        font-size: 50px;
+    }
+
+    article p{
+        font-size: 25px;
+    }
+
+    .col-6, .col-4, .col-7, .col-5 {
+        width: 100%; /*to make colums stack on eachother*/
+        margin: 0;
+    }
+
+    div.mobileStack {/*skipping column 3 and specifically attaching to this class*/
+        width: 50%;
+        display: block;
+    }
+
+    div.box {
+        padding: 15px;
+        display: block;/*to make sure tha boxes are stacked on each other*/
+    }
+
+    div.slopeIcon {
+        margin: 10px;
+    }
+    
+    div.slopeIcon img {
+        width: 100%;
+        /*margin: 10px; gives me 10 px around the images which causes overflow, we will add 10 px to the slope icon which is wrapping our image*/
+    }
+
+    div.leftside-col, div.rightSide-col {
+        margin: 15px;
+    }
+
+    input[type="text"] {
+        width: 350px;
+    }
+
+    .videoContainer iframe {
+        position: relative; /*stay in its normal position and don't move*/
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+}
+/*Use IDs if you need to interact with elements using javascript, otherwise, it's bad practice to use IDs for just styling*/
+#dropdownClick {
+
+}
